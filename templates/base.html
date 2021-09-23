@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+
+<html lang="ja">
+
+{% load static %}
+{% load bootstrap4 %}
+{% load fontawesome_5 %}
+
+
+
+    <head>
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        {% bootstrap_css %}
+        {% fontawesome_5_static %}
+        {% block css %}{% endblock css %}
+
+        <title>{% block title %}{% endblock title %}</title>
+
+    </head>
+
+
+
+    <body>
+
+
+        {% include 'snippets/header.html' %}
+
+
+        <main class="container">
+
+            {% block main %}{% endblock main %}
+        
+        </main>
+
+
+        {% include 'snippets/footer.html' %}
+
+
+        {% bootstrap_javascript jquery='full' %}
+        {% block js %}{% endblock js %}
+
+        
+    </body>
+
+
+
+</html>

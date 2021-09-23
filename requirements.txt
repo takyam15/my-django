@@ -1,0 +1,11 @@
+django>=3.2.4
+django-bootstrap4
+django-environ
+django-fontawesome-5
+django-recaptcha2
+factory-boy
+gunicorn
+pillow
+psycopg2
+pytest
+pytest-django
