@@ -30,6 +30,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'bootstrap4',
+    'django_cleanup',
     'fontawesome_5'
 ]
 
@@ -105,12 +106,16 @@ AUTH_PASSWORD_VALIDATORS = [
 
 AUTH_USER_MODEL = 'account.CustomUser'
 
+
 LOGIN_URL = 'account:login'
+
 LOGIN_REDIRECT_URL = 'account:home'
+
 LOGOUT_REDIRECT_URL = 'account:login'
 
 
 LANGUAGE_CODE = 'ja'
+
 LANGUAGES = [
     ('ja', _('日本語')),
     ('en', _('English')),
@@ -126,14 +131,37 @@ USE_TZ = True
 
 
 STATIC_URL = '/static/'
-# STATIC_ROOT = BASE_DIR / 'static'
+
+#STATIC_ROOT = BASE_DIR / 'static'
+
 STATICFILES_DIRS = [BASE_DIR / 'static']
 
+
 MEDIA_URL = '/media/'
+
 MEDIA_ROOT = BASE_DIR / 'media'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
+
+LOGGING = {
+    'version': 1,
+    'disable_existing_loggers': False,
+    'handlers': {
+        'file': {
+            'level': 'DEBUG',
+            'class': 'logging.FileHandler',
+            'filename': BASE_DIR / 'logs/debug.log',
+        },
+    },
+    'loggers': {
+        'django': {
+            'handlers': ['file'],
+            'level': 'DEBUG',
+            'propagate': True,
+        },
+    },
+}
 
 
 EMAIL_HOST = env('EMAIL_HOST')

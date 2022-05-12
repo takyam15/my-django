@@ -1,5 +1,6 @@
-django>=3.2.4
+django >=3.2.4, <4.0
 django-bootstrap4
+django-cleanup
 django-environ
 django-fontawesome-5
 django-recaptcha2
